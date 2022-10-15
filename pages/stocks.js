@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaSearch } from 'react-icons/fa';
 import { GrDiamond, GrFormAdd } from 'react-icons/gr';
 import StockCard from './StockCard';
-
+import AddItem from './AddItem';
 
 const stocks = () => {
+    const [showAdd,toggleShow] = useState(false); 
+    const  showAddItem = ()=>{
+        toggleShow(true);
+    }
   return (
     <div>
+            {showAdd && <AddItem close ={toggleShow}/>}
       <div className="flex flex-row mx-3 my-3 justify-between">
         <div className='flex flex-col px-3'>
             <div className='text-3xl font-serif drop-shadow-lg font-bold text-dark_heading'>INVENTORY...</div>
@@ -18,7 +23,7 @@ const stocks = () => {
             <input type="text" className="outline-none border-none ml-0.5 text-moderate_color" placeholder='Search in Inventory'/>
         </form>
         <div title='Add Item'>
-            <GrFormAdd className='text-white text-5xl m-2 p-2 bg-light_background rounded-full hover:cursor-pointer hover:bg-dark_background shadow-lg'/>
+            <GrFormAdd onClick={showAddItem} className='text-white text-5xl m-2 p-2 bg-light_background rounded-full hover:cursor-pointer hover:bg-dark_background shadow-lg'/>
         </div>
         </div>
       </div>
