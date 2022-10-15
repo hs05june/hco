@@ -15,7 +15,6 @@ const Carousel = () => {
         pauseOnHover: true,
         pauseOnFocus: true,
         resetProgress: true,
-        // arrows: false,
     }}
     >
         <SplideTrack>

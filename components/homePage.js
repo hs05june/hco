@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from './Carousel'
 import Navbar from './Navbar'
+import { Team_Card } from './Team_Card'
 
 const HomePage = () => {
   return (
@@ -14,10 +15,10 @@ const HomePage = () => {
         </div>
         </div>
       </div>
-      {/* <div className='h-screen bg-dark_heading'>
-
-      </div>
       <div className='h-screen bg-dark_heading'>
+        <Team_Card/>
+      </div>
+      {/* <div className='h-screen bg-dark_heading'>
 
       </div>
       <div className='h-screen bg-dark_heading'>
