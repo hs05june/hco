@@ -22,8 +22,8 @@ const Navbar = () => {
                 </div>
         </div>
         <div className="navbtns md:w-1/4 lg:w-1/6  md_max:hidden flex flex-column justify-between w-1/8">
-            <button>Sign Up</button>
-            <button>Log In</button>
+            <button><Link href="signup">Sign Up</Link></button>
+            <button><Link href="login">Log In</Link></button>
         </div>
     </nav>
      <div className='hidden md_max:flex bg-light_background flex-col justify-center items-center text-center py-6'>
