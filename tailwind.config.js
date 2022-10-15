@@ -32,6 +32,12 @@ module.exports = {
         "xl":"1280px",
         "sm_max":{"max":"640px"},
         "lg_max":{"max":"1024px"},
+      },
+      boxShadow:{
+        "3xl":"0 0px 50px 0px rgb(0 0 0 / 0.25);"
+      },
+      backgroundImage:{
+        "login_img":"url('/login_img.png')",
       }
     }
   },
