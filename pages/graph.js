@@ -49,9 +49,9 @@ export default function Home() {
     <>
     <h1 className='text-[50px] text-dark_heading mt-[10px]'>Dashboard</h1>
     <div className='flex flex-wrap justify-center'>
-      <Graph_card bg_color="dark_background" icon={faSquarePlus} text="Total Income" amount="567" />
-      <Graph_card bg_color="dark_background" icon={faWallet} text="Total Saving" amount="567" />
-      <Graph_card bg_color="dark_background" icon={faSquareMinus} text="Total Expense" amount="567" />
+      <Graph_card bg_color="dark-background" icon={faSquarePlus} text="Total Income" amount="567" />
+      <Graph_card bg_color="dark-background" icon={faWallet} text="Total Saving" amount="567" />
+      <Graph_card bg_color="dark-background" icon={faSquareMinus} text="Total Expense" amount="567" />
     </div>
     <div className='w-[90%] max-w-[1200px] mx-auto mt-[5vh] mb-[20px]'>
       <Bar options={options} data={data}/>;
