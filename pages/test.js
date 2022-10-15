@@ -13,8 +13,8 @@ export default function test() {
     const generateURL=async()=>{
         const formData = new FormData();
         formData.append('file', image);
-        formData.append('upload_preset',process.env.NEXT_PUBLIC_upload_preset);
-        const data = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_cld_name}/image/upload`, formData)
+        formData.append('upload_preset',"oj2z6wjo");
+        const data = await axios.post(`https://api.cloudinary.com/v1_1/dsp58iis2/image/upload`, formData)
         const {data:{secure_url: url}}=data
         seturl(url)
     }

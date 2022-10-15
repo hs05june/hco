@@ -41,7 +41,8 @@ export default function Home() {
   const [month,setmonth]=useState('January');
 
   let options = {
-    responsive: true,
+    // responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top',
@@ -74,33 +75,36 @@ export default function Home() {
 
   return (
     <>
-    <div className='text-[35px] text-dark_heading mt-[10px] pl-[1vw] border-b-[3px] border-black sticky top-[0px] bg-white'>Dashboard</div>
-    <div className='flex flex-wrap justify-center mt-[10px]'>
-      <Graph_card bg_color="dark-background" icon={faSquarePlus} text="Total Income" amount="567" />
-      <Graph_card bg_color="dark-background" icon={faWallet} text="Total Saving" amount="567" />
-      <Graph_card bg_color="dark-background" icon={faSquareMinus} text="Total Expense" amount="567" />
-    </div>
-    <div className='w-[90%] max-w-[1200px] mx-auto mt-[5vh] mb-[20px]'>
-      <div className='flex justify-between'>
-        <h3 className='font-bold text-[30px]'>Expense</h3>
-        <select className='w-[150px] border-[2px]' onChange={changeMonth}>
-          <option value="January">January</option>
-          <option value="February">February</option>
-          <option value="March">March</option>
-          <option value="April">April</option>
-          <option value="May">May</option>
-          <option value="June">June</option>
-          <option value="July">July</option>
-          <option value="August">August</option>
-          <option value="September">September</option>
-          <option value="October">October</option>
-          <option value="November">November</option>
-          <option value="December">December</option>
-        </select>
-
+      <div className='text-[35px] text-dark_heading mt-[10px] pl-[1vw] border-b-[3px] border-black sticky top-[0px] bg-white'>Dashboard</div>
+      <div className='flex flex-wrap justify-center mt-[20px]'>
+        <Graph_card bg_color="dark-background" icon={faSquarePlus} text="Total Income" amount="567" />
+        <Graph_card bg_color="dark-background" icon={faWallet} text="Total Saving" amount="567" />
+        <Graph_card bg_color="dark-background" icon={faSquareMinus} text="Total Expense" amount="567" />
       </div>
-      <Bar options={options} data={data}/>;
-    </div>
+      <div className='mx-auto mt-[5vh] mb-[20px] w-[90%] max-w-[1200px]'>
+        <div className='flex justify-between'>
+          <h3 className='font-bold text-[30px]'>Expense</h3>
+          <select className='w-[150px] border-[2px]' onChange={changeMonth}>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+        </div>
+      </div>
+      <div className='max-w-[1250px] w-[90%] overflow-x-auto m-auto border-[2px] rounded-[14px] p-[5px] flex justify-center'>
+        <div className='h-[50vh] w-[150vh] max-w-[1200px] pb-[20px]'>
+          <Bar options={options} data={data} />;
+        </div>
+      </div>
     </>
   )
 }

@@ -43,28 +43,22 @@ a {
   font-family: 'Marcellus SC', serif;
   font-size: 2rem;
   font-weight: bolder;
-  /* color: var(--light-heading); */
 }
 .navbtns button{
   background: var(--button-color);
   padding: 0.6rem 0.6rem;
-  /* line-height: 5.5rem; */
   font-stretch: 150%;
   font-weight: 600;
   border-radius: 0.5rem;
-  /* opacity: 0.8; */
   color: white;
   letter-spacing: 0.05em;
 }
 .navbtns button:hover{
-  /* opacity: 1; */
-  /* filter: brightness(1.2); */
   opacity: 0.8;
 }
 .nav_box_btns button{
-  background: red;
+  background: var(--button-color);
   padding: 0.6rem 0.6rem;
-  /* line-height: 5.5rem; */
   font-stretch: 150%;
   font-weight: 600;
   border-radius: 0.5rem;
@@ -86,9 +80,7 @@ a {
 }
 .splide_arrow{
   align-items: center;
-  /* background: #ccc; */
   border: 0;
-  /* border-radius: 50%; */
   cursor: pointer;
   display: flex;
   height: 3em;
@@ -96,11 +88,9 @@ a {
   opacity: .7;
   position: absolute;
   bottom: -10%;
-  /* transform: translateY(-50%); */
   z-index: 1;
   background: var(--dark-heading);
   color: white;
-  /* background: wheat; */
   width: 6em;
 }
 .splide__arrow--next{
@@ -113,6 +103,20 @@ a {
   right: 55% !important;
   left: 30% !important;
 }
-/* .splide__pagination__page{
-  background: black;
-} */
+.login_link a{
+  color: var(--button-color);
+}
+.login{
+  background-image: url('/login_img.jpg');
+  background-size: cover;
+}
+.nav_box{
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+  transform: translateY(-100%);
+  transition: all 500ms ease-in-out;
+}
+.active{
+  transform: translateY(0%);
+}
