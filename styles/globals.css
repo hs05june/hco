@@ -75,4 +75,42 @@ a {
 .navbar{
   position: sticky;
   top: 0;
+  z-index: 100;
 }
+.splide__arrows{
+  display: inline-flex;
+  width: 5rem;
+  justify-content: space-between;
+}
+.splide_arrow{
+  align-items: center;
+  /* background: #ccc; */
+  border: 0;
+  /* border-radius: 50%; */
+  cursor: pointer;
+  display: flex;
+  height: 3em;
+  justify-content: center;
+  opacity: .7;
+  position: absolute;
+  bottom: -10%;
+  /* transform: translateY(-50%); */
+  z-index: 1;
+  background: var(--dark-heading);
+  color: white;
+  /* background: wheat; */
+  width: 6em;
+}
+.splide__arrow--next{
+  border-radius: 67% 33% 34% 67% / 52% 54% 45% 47% ;
+  right: 30% !important;
+  left: 55% !important;
+}
+.splide__arrow--prev{
+  border-radius: 27% 73% 73% 27% / 52% 54% 45% 47% ;
+  right: 55% !important;
+  left: 30% !important;
+}
+/* .splide__pagination__page{
+  background: black;
+} */

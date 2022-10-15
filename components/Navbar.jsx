@@ -3,7 +3,7 @@ import Link from "next/link"
 const Navbar = () => {
   return (
     <>
-    <nav className="navbar bg-white w-screen px-10 h-20 items-center justify-between flex flex-column">
+    <nav className="navbar bg-white w-full px-10 h-20 items-center justify-between flex flex-column">
         <div className="logo  text-black justify-center w-1/6">
            <span className="text-dark_heading text-6xl">A</span>mbition
         </div>
@@ -21,7 +21,7 @@ const Navbar = () => {
                     <Link href="/items">Items</Link>
                 </div>
         </div>
-        <div className="navbtns md:w-1/4  sm_max:hidden flex flex-column justify-between w-1/6">
+        <div className="navbtns md:w-1/4 lg:w-1/6  sm_max:hidden flex flex-column justify-between w-1/8">
             <button>Sign Up</button>
             <button>Log In</button>
         </div>
