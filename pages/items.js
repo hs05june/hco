@@ -4,7 +4,8 @@ import { GrDiamond, GrFormAdd } from 'react-icons/gr';
 import StockCard from './StockCard';
 import AddItem from './AddItem';
 
-const stocks = () => {
+const items = () => {
+  const [allItems,changeAllItems] = useState([]);
     const [showAdd,toggleShow] = useState(false); 
     const  showAddItem = ()=>{
         toggleShow(true);
@@ -42,4 +43,4 @@ const stocks = () => {
   )
 }
 
-export default stocks
+export default items

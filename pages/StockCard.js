@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {RiNumbersFill} from 'react-icons/ri';
 import {ImPriceTags} from 'react-icons/im';
 import {AiTwotoneDelete,AiFillEdit} from 'react-icons/ai';
+import UpdateItem from './UpdateItem';
 import Image from 'next/image';
 
 const StockCard = (props) => {
@@ -15,7 +16,9 @@ const StockCard = (props) => {
     else if(props.category=='out of stock'){
         back = 'linear-gradient(#f40752,#f9ab8f)'
     }
+    const [updateForm,toggleUpdateForm] = useState(false);
   return (
+    <>
     <div className='flex flex-col rounded-xl px-3 pb-3 mx-2 my-2 bg-card text-center shadow-lg' style={{background:'linear-gradient(var(--moderate-color),var(--light-background))'}}>
         <span class="inline-block mt-1 py-0.5 px-2 rounded text-white text-xs font-medium tracking-widest w-max" style={{background:back}}>{props.category.toUpperCase()}</span>
     <div className='flex flex-row py-5 px-3  border-b-2 border-b-card_border' >
@@ -37,6 +40,7 @@ const StockCard = (props) => {
         </div>
     </div>
     </div>
+    </>
   )
 }
 
