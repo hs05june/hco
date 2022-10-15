@@ -16,9 +16,11 @@ const signup = () => {
                 <span className="text-dark_heading xl:text-6xl md:text-5xl sm:text-5xl sm_max:text-4xl">W</span>elcome <span className='text-dark_heading xl:text-6xl md:text-5xl sm:text-5xl sm_max:text-4xl'>B</span>ack
             </div>
             <div className='flex flex-col items-center w-full my-5'>
+                <input type="text" placeholder='Enter Your Username' className='w-full px-5 py-3 my-2 outline-none rounded-xl'/>
                 <input type="text" placeholder='Enter Your Email' className='w-full px-5 py-3 my-2 outline-none rounded-xl'/>
-                <input type="text" placeholder='Enter Your Password' className='w-full px-5 py-3 my-2 outline-none rounded-xl' />
-                <button className=' bg-button_color py-4 tracking-wide text-bold rounded-lg text-white w-full my-2'>Login</button>
+                <input type="number" placeholder='Enter Your Phone Number' className='w-full px-5 py-3 my-2 outline-none rounded-xl'/>
+                <input type="password" placeholder='Enter Your Password' className='w-full px-5 py-3 my-2 outline-none rounded-xl' />
+                <button className=' bg-button_color py-4 tracking-wide text-bold rounded-lg text-white w-full my-2 hover:opacity-90'>Signup</button>
                 <span className='login_link text-lg my-2'>Already a User? <Link href="login"> Login</Link></span>
             </div>
 

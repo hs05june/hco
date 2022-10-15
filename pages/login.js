@@ -17,8 +17,8 @@ const login = () => {
                 </div>
                 <div className='flex flex-col items-center w-full my-5'>
                     <input type="text" placeholder='Enter Your Email' className='w-full px-5 py-3 my-2 outline-none rounded-xl'/>
-                    <input type="text" placeholder='Enter Your Password' className='w-full px-5 py-3 my-2 outline-none rounded-xl' />
-                    <button className=' bg-button_color py-4 tracking-wide text-bold rounded-lg text-white w-full my-2'>Login</button>
+                    <input type="password" placeholder='Enter Your Password' className='w-full px-5 py-3 my-2 outline-none rounded-xl' />
+                    <button className=' bg-button_color py-4 tracking-wide text-bold rounded-lg text-white w-full my-2 hover:opacity-90'>Login</button>
                     <span className='login_link text-lg my-2'> Not a User? <Link href="signup"> SignUp</Link></span>
                 </div>
 
