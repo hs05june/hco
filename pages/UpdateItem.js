@@ -1,9 +1,14 @@
 import React,{useState} from 'react';
 import Draggable from 'react-draggable';
+import {AiFillCloseCircle} from 'react-icons/ai';
+import{RiNumbersFill} from 'react-icons/ri'
+import {ImPriceTags} from 'react-icons/im';
+import {BsCardImage} from 'react-icons/bs';
+import {TiSortAlphabeticallyOutline} from 'react-icons/ti';
 
-const UpdateItem = ({props}) => {
+const UpdateItem = ({props,close}) => {
     const hideAddItem = () =>{
-        props.close(false);
+        close(false);
     }
 
     const [name,changeName] = useState(props.name)
@@ -20,7 +25,7 @@ const UpdateItem = ({props}) => {
     <form className='absolute m-auto z-50 md:top-[3vh] top-[15vh] md:left-[34vw] shadow-xl rounded-md bg-light_color'>
         <div className='flex flex-row justify-between rounded-t-md border-moderate_color border-2'>
             <h1 className='font-serif text-2xl mx-2 text-dark_heading'>UPDATE ITEM</h1>
-            <AiOutlineCloseCircle onClick={hideAddItem} className='text-delete hover:cursor-pointer text-2xl mt-0.5 mr-1 hover:text-red-600'/>
+            <AiFillCloseCircle onClick={hideAddItem} className='text-delete hover:cursor-pointer text-2xl mt-0.5 mr-1 hover:text-red-600'/>
         </div>
         <div className='px-3 py-1 border-2 border-moderate_color'>
         <label htmlFor='name' className='text-lg font-sans mt-3 flex flex-row'><TiSortAlphabeticallyOutline className=' text-dark_heading mt-1.5 mx-1'/>NAME: </label><br/>

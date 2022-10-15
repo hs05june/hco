@@ -10,13 +10,22 @@ const StockCard = (props) => {
     if(props.category=='sufficient'){
         back = 'linear-gradient(#30c67c,#07f49e)'
     }
-    else if(props.category=='less'){
+    else if(props.category=='less in stock'){
         back = 'linear-gradient(#fbd07c,#e9d022)'
     }
     else if(props.category=='out of stock'){
         back = 'linear-gradient(#f40752,#f9ab8f)'
     }
-    const [updateForm,toggleUpdateForm] = useState(false);
+
+    const showUpdateForm = () => {
+        props.open(true);
+        props.update({
+            name:props.name,
+            price:props.price,
+            quantity:props.quantity
+        })
+    }
+
   return (
     <>
     <div className='flex flex-col rounded-xl px-3 pb-3 mx-2 my-2 bg-card text-center shadow-lg' style={{background:'linear-gradient(var(--moderate-color),var(--light-background))'}}>
@@ -35,7 +44,7 @@ const StockCard = (props) => {
         <span className='font-bold'>{props.update} 123</span>
         </div>
         <div className='flex flex-row text-3xl px-2 mt-4'>
-            <AiFillEdit title='Edit' className='text-edit mx-2 p-0.5 hover:cursor-pointer hover:outline'/>
+            <AiFillEdit onClick={showUpdateForm} title='Edit' className='text-edit mx-2 p-0.5 hover:cursor-pointer hover:outline'/>
             <AiTwotoneDelete title='Delete' className='text-delete mx-1 p-0.5 hover:cursor-pointer hover:outline'/>
         </div>
     </div>
