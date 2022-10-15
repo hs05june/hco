@@ -1,19 +1,21 @@
 import Image from "next/image"
+import Link from "next/link"
 import {BsInstagram,BsGithub,BsLinkedin} from "react-icons/bs"
-export const Team_Card = () => {
+
+export const Team_Card = (props) => {
   return (
-    <div>
-        <div>
+    <div className="flex flex-col w-full h-full max-w-xs items-center text-center mx-6 bg-light_background">
+        <div className="py-2">
             <Image src="/1.jpg" alt="Image 1"  height="200" width="300"/>
         </div>
         <div>
-            <h1>John Doe</h1>
-            <h3>CEO</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis sunt veritatis quas necessitatibus sint, harum ipsa enim distinctio aspernatur dolore fugiat.</p>
-            <div>
-                <span><BsInstagram/></span>
-                <span><BsGithub/></span>
-                <span><BsLinkedin/></span>
+            <h1 className="text-2xl font-bold text-dark_heading">{props.name}</h1>
+            <h3 className="text-lg text-light_heading">{props.role}</h3>
+            <p className="text-white px-3">{props.intro}</p>
+            <div className="flex flex-row justify-around py-6 px-3">
+                <span><Link href={props.instagram}><BsInstagram fontSize="2em" color="var(--dark-heading)"/></Link></span>
+                <span><Link href={props.github}><BsGithub fontSize="2em" color="var(--dark-heading)"/></Link></span>
+                <span><Link href={props.linkedin}><BsLinkedin fontSize="2em" color="var(--dark-heading)"/></Link></span>
             </div>
             
         </div>
