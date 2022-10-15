@@ -10,7 +10,9 @@
   --light-background:#C6C6FB;
   --button-color:#5694FE;
 }
-
+.billingItems::-webkit-scrollbar{
+  display: none;
+}
 html,
 body {
   padding: 0;

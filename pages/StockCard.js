@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import {RiNumbersFill} from 'react-icons/ri';
 import {ImPriceTags} from 'react-icons/im';
 import {AiTwotoneDelete,AiFillEdit} from 'react-icons/ai';
-import UpdateItem from './UpdateItem';
 import Image from 'next/image';
 
 const StockCard = (props) => {
@@ -21,8 +20,10 @@ const StockCard = (props) => {
         props.open(true);
         props.update({
             name:props.name,
-            price:props.price,
-            quantity:props.quantity
+            mrp:props.mrp,
+            quantity:props.quantity,
+            cp:props.cp,
+            minimum:props.minimum,
         })
     }
 
@@ -34,7 +35,7 @@ const StockCard = (props) => {
         <Image src={props.image} height={20} width={80} className='rounded-full border-white border-8 shadow-md'></Image>
     <div className='flex flex-col ml-4' >
         <h2 className=' text-3xl font-serif'>{props.name}</h2>
-        <h3 className=' font-sans flex flex-row justify-center'><ImPriceTags className='mx-2 mt-1.5 text-dark_heading'/>MRP: ₹{props.price}/-</h3>
+        <h3 className=' font-sans flex flex-row justify-center'><ImPriceTags className='mx-2 mt-1.5 text-dark_heading'/>MRP: ₹{props.mrp}/-</h3>
         <h3 className=' font-sans flex flex-row justify-center' ><RiNumbersFill className='mx-2 mt-1.5 text-dark_heading'/>{props.quantity} Items Left</h3>
     </div>
     </div>
