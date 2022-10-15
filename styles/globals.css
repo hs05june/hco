@@ -1,13 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap');
 :root{
   --dark-heading:#1515BF;
   --light-heading:#3E3ED5;
   --moderate-color:#6A6ADC;
   --dark-background:#8989EB;
   --light-background:#C6C6FB;
+  --button-color:#5694FE;
 }
 
 html,
@@ -35,4 +36,43 @@ a {
     color: white;
     background: black;
   }
+}
+.logo{
+  font-family: 'Marcellus SC', serif;
+  font-size: 2rem;
+  font-weight: bolder;
+  /* color: var(--light-heading); */
+}
+.navbtns button{
+  background: var(--button-color);
+  padding: 0.6rem 0.6rem;
+  /* line-height: 5.5rem; */
+  font-stretch: 150%;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  /* opacity: 0.8; */
+  color: white;
+  letter-spacing: 0.05em;
+}
+.navbtns button:hover{
+  /* opacity: 1; */
+  /* filter: brightness(1.2); */
+  opacity: 0.8;
+}
+.nav_box_btns button{
+  background: red;
+  padding: 0.6rem 0.6rem;
+  /* line-height: 5.5rem; */
+  font-stretch: 150%;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  opacity: 0.8;
+  color: white;
+}
+.nav_box_btns button:hover{
+  opacity: 1;
+}
+.navbar{
+  position: sticky;
+  top: 0;
 }
