@@ -1,4 +1,5 @@
 import React from 'react'
+import Carousel from './Carousel'
 import Navbar from './Navbar'
 
 const HomePage = () => {
@@ -6,7 +7,7 @@ const HomePage = () => {
     <div className='w-screen'>
       <Navbar/>
       <div className='h-screen bg-dark_heading'>
-
+      <Carousel/>
       </div>
       <div className='h-screen bg-dark_heading'>
 

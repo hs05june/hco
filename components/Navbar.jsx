@@ -21,7 +21,7 @@ const Navbar = () => {
                     <Link href="/items">Items</Link>
                 </div>
         </div>
-        <div className="navbtns md:w-1/4  sm_max:hidden flex flex-column justify-between w-1/6">
+        <div className="navbtns md:w-1/4 lg:w-1/6  sm_max:hidden flex flex-column justify-between w-1/8">
             <button>Sign Up</button>
             <button>Log In</button>
         </div>
