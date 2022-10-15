@@ -25,11 +25,13 @@ module.exports = {
     },
     extend:{
       screens:{
-        "sm_max":{"max":"768px"},
+        "md_max":{"max":"768px"},
         "sm":"640px",
         "md":"768px",
         "lg":"1024px",
         "xl":"1280px",
+        "sm_max":{"max":"640px"},
+        "lg_max":{"max":"1024px"},
       }
     }
   },
