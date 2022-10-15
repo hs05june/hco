@@ -1,17 +1,24 @@
 import React, { useState } from 'react'
 import { FaSearch } from 'react-icons/fa';
 import { GrDiamond, GrFormAdd } from 'react-icons/gr';
+import UpdateItem from './UpdateItem';
 import StockCard from './StockCard';
 import AddItem from './AddItem';
 
-const stocks = () => {
+const items = () => {
+    const [allItems,changeAllItems] = useState([]);
     const [showAdd,toggleShow] = useState(false); 
-    const  showAddItem = ()=>{
+    const [updateForm,toggleUpdateForm] = useState(false);
+    const showAddItem = ()=>{
         toggleShow(true);
     }
+    const [updateProps,changeUpdateProps] = useState({});
+
   return (
     <div>
-            {showAdd && <AddItem close ={toggleShow}/>}
+            {showAdd && <AddItem close = {toggleShow}/>}
+            {updateForm && <UpdateItem props={updateProps} close={toggleUpdateForm}/>}
+       <div className={(showAdd || updateForm) ? 'blur select-none pointer-events-none' : ''}>     
       <div className="flex flex-row mx-3 my-3 justify-between">
         <div className='flex flex-col px-3'>
             <div className='text-3xl font-serif drop-shadow-lg font-bold text-dark_heading'>INVENTORY...</div>
@@ -33,13 +40,14 @@ const stocks = () => {
             <input type="text" className="outline-none border-none ml-0.5 text-moderate_color" placeholder='Search in Inventory'/>
         </form>
       <div className='mx-3 my-3' style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))',padding:'auto'}}>
-        <StockCard name='AHDT' quantity='12' price='162' category='less' image='/send1.jpg'/>
-        <StockCard name='AHDT' quantity='12' price='162' category='out of stock' image='/send1.jpg'/>
-        <StockCard name='AHDT' quantity='12' price='162' category='sufficient' image='/send1.jpg'/>
-        <StockCard name='AHDT' quantity='12' price='162' category='out of stock' image='/send1.jpg'/>
+        <StockCard name='AHDT' quantity='12' price='162' category='less in stock' image='/send1.jpg' update={changeUpdateProps} open={toggleUpdateForm}/>
+        <StockCard name='AHDT' quantity='12' price='162' category='out of stock' image='/send1.jpg' update={changeUpdateProps} open={toggleUpdateForm}/>
+        <StockCard name='AHDT' quantity='12' price='162' category='sufficient' image='/send1.jpg' update={changeUpdateProps} open={toggleUpdateForm}/>
+        <StockCard name='AHDT' quantity='12' price='162' category='out of stock' image='/send1.jpg' update={changeUpdateProps} open={toggleUpdateForm}/>
+      </div>
       </div>
     </div>
   )
 }
 
-export default stocks
+export default items
