@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <div className='w-screen'>
       <Navbar/>
-      <div className='h-min bg-light_background w-screen px-5 py-20'>
+      <div className='h-min bg-light_background w-screen px-5 pt-10 pb-20'>
           <h1 className='text-5xl font-bold pb-7' >What We Do?</h1>
           <div className='flex justify-center w-full'>
         <div className='w-2/3'>
