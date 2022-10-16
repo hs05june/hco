@@ -1,11 +1,15 @@
-import { Schema, model, models } from "mongoose";
-import uniqueValidator from "mongoose-unique-validator";
+const { Schema, model, models } = require("mongoose");
+const uniqueValidator = require("mongoose-unique-validator");
 
 const logSchema = new Schema({
   typeOfTransaction: { // ['sell', 'restock']
     type: String,
     required: true,
     index: true,
+    enum: {
+      values: ["sell", "restock"],
+      message: "paymentInterval can be either 'sell' or 'restock'",
+    }
   },
   description: {
     type: String,
@@ -33,4 +37,4 @@ const logSchema = new Schema({
 
 logSchema.plugin(uniqueValidator);
 
-export default models?.Log || model("Log", logSchema);
+module.exports = models?.Log || model("Log", logSchema);

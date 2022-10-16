@@ -1,5 +1,5 @@
-import { Schema, model, models } from "mongoose";
-import uniqueValidator from "mongoose-unique-validator";
+const { Schema, model, models } = require("mongoose");
+const uniqueValidator = require("mongoose-unique-validator");
 
 const itemSchema = new Schema({
   name: {
@@ -35,9 +35,12 @@ const itemSchema = new Schema({
     type: Number,
     required: true,
     index: true,
+  },
+  photoUrl: {
+    type: String,
+    required: true,
   }
 });
 
 itemSchema.plugin(uniqueValidator);
-
-export default models?.Item || model("Item", itemSchema);
+module.exports = models?.Item || model("Item", itemSchema);
