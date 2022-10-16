@@ -41,7 +41,7 @@ const AddItem = (props) => {
         <label htmlFor='minimum' className='text-lg font-sans mt-3 flex flex-row'><RiNumbersFill className=' text-dark_heading mt-2 mx-1'/>MINIMUM NEEDED: </label><br/>
         <input value={minimum} onChange={(e)=>{changeMinimum(e.target.value)}} type='number' name='minimum' className='h-10 w-96 rounded-ld border-2 border-light_background focus:shadow-lg' id='minimum' /><br/>
         <label htmlFor='image' className='text-lg font-sans mt-3 flex flex-row'><BsCardImage className=' text-dark_heading mt-2 mx-1'/>IMAGE: </label><br/>
-        <input type='file' name='image' id='image' className='hover:cursor-pointer'/><br/>
+        <input type='file' name='image' id='image' className='hover:cursor-pointer' accept="image/x-png,image/gif,image/jpeg"/><br/>
         <div className='text-center' onClick={submitAddItem}><button type='button' className='bg-blue rounded-md mt-3 text-white hover:cursor-pointer hover:bg-button_color shadow-lg px-5 py-2 my-2'>ADD ITEM</button></div>
         </div>
     </form>
