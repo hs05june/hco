@@ -40,10 +40,10 @@ const items = () => {
             <input type="text" className="outline-none border-none ml-0.5 text-moderate_color" placeholder='Search in Inventory'/>
         </form>
       <div className='mx-3 my-3' style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))',padding:'auto'}}>
-        <StockCard name='AHDT' quantity='12' price='162' category='less in stock' image='/send1.jpg' update={changeUpdateProps} open={toggleUpdateForm}/>
-        <StockCard name='AHDT' quantity='12' price='162' category='out of stock' image='/send1.jpg' update={changeUpdateProps} open={toggleUpdateForm}/>
-        <StockCard name='AHDT' quantity='12' price='162' category='sufficient' image='/send1.jpg' update={changeUpdateProps} open={toggleUpdateForm}/>
-        <StockCard name='AHDT' quantity='12' price='162' category='out of stock' image='/send1.jpg' update={changeUpdateProps} open={toggleUpdateForm}/>
+        <StockCard name='AHDT' quantity='12' mrp='162' cp='123' minimum='2' category='less in stock' image='/send1.jpg' update={changeUpdateProps} open={toggleUpdateForm}/>
+        <StockCard name='AHDT' quantity='12' mrp='162' cp='123' minimum='2' category='out of stock' image='/send1.jpg' update={changeUpdateProps} open={toggleUpdateForm}/>
+        <StockCard name='AHDT' quantity='12' mrp='162' cp='123' minimum='2' category='sufficient' image='/send1.jpg' update={changeUpdateProps} open={toggleUpdateForm}/>
+        <StockCard name='AHDT' quantity='12' mrp='162' cp='123' minimum='2' category='out of stock' image='/send1.jpg' update={changeUpdateProps} open={toggleUpdateForm}/>
       </div>
       </div>
     </div>
