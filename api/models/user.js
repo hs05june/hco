@@ -1,5 +1,5 @@
-import { Schema, model, models } from "mongoose";
-import uniqueValidator from "mongoose-unique-validator";
+const { Schema, model, models } = require("mongoose");
+const uniqueValidator = require("mongoose-unique-validator");
 
 const userSchema = new Schema({
   email: {
@@ -23,7 +23,7 @@ const userSchema = new Schema({
     required: true,
     index: true,
   },
-  shopIDs: {
+  shops: {
     type: [Schema.Types.ObjectId],
     ref: "Shop",
     default: []
@@ -32,4 +32,4 @@ const userSchema = new Schema({
 
 userSchema.plugin(uniqueValidator);
 
-export default models?.User || model("User", userSchema);
+module.exports = models?.User || model("User", userSchema);

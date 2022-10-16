@@ -1,5 +1,5 @@
-import { Schema, model, models } from "mongoose";
-import uniqueValidator from "mongoose-unique-validator";
+const { Schema, model, models } = require("mongoose");
+const uniqueValidator = require("mongoose-unique-validator");
 
 const shopSchema = new Schema({
   owners: {
@@ -31,4 +31,4 @@ const shopSchema = new Schema({
 
 shopSchema.plugin(uniqueValidator);
 
-export default models?.Shop || model("Shop", shopSchema);
+module.exports = models?.Shop || model("Shop", shopSchema);
