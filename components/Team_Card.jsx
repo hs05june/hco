@@ -4,7 +4,7 @@ import {BsInstagram,BsGithub,BsLinkedin} from "react-icons/bs"
 
 export const Team_Card = (props) => {
   return (
-    <div className="flex flex-col w-full h-full max-w-xs items-center text-center mx-6 bg-light_background">
+    <div className="flex flex-col w-full h-full max-w-xs items-center text-center mx-6 bg-team_card_color">
         <div className="py-2">
             <Image src="/1.jpg" alt="Image 1"  height="200" width="300"/>
         </div>

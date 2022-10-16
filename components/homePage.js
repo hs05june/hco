@@ -3,6 +3,7 @@ import Carousel from './Carousel'
 import Navbar from './Navbar'
 import { Team_Card } from './Team_Card'
 import Team_Data from '../data/Team_Data'
+import Footer from './Footer'
 // import { loadGetInitialProps } from 'next/dist/shared/lib/utils'
 const HomePage = () => {
   console.log(Team_Data);
@@ -29,10 +30,10 @@ const HomePage = () => {
         }
       </div>
       </div>
-      {/* <div className='h-screen bg-dark_heading'>
-
+      <div className='h-min '>
+        <Footer/>
       </div>
-      <div className='h-screen bg-dark_heading'>
+      {/* <div className='h-screen bg-dark_heading'>
 
       </div> */}
     </div>
