@@ -20,10 +20,10 @@ const StockCard = (props) => {
         props.open(true);
         props.update({
             name:props.name,
-            mrp:props.mrp,
-            quantity:props.quantity,
-            cp:props.cp,
-            minimum:props.minimum,
+            sellPrice:props.sellPrice,
+            leftInStock:props.leftInStock,
+            costPrice:props.costPrice,
+            alertAt:props.alertAt,
         })
     }
 
@@ -35,8 +35,8 @@ const StockCard = (props) => {
         <Image src={props.image} height={20} width={80} className='rounded-full border-white border-8 shadow-md'></Image>
     <div className='flex flex-col ml-4' >
         <h2 className=' text-3xl font-serif'>{props.name}</h2>
-        <h3 className=' font-sans flex flex-row justify-center'><ImPriceTags className='mx-2 mt-1.5 text-dark_heading'/>MRP: ₹{props.mrp}/-</h3>
-        <h3 className=' font-sans flex flex-row justify-center' ><RiNumbersFill className='mx-2 mt-1.5 text-dark_heading'/>{props.quantity} Items Left</h3>
+        <h3 className=' font-sans flex flex-row justify-center'><ImPriceTags className='mx-2 mt-1.5 text-dark_heading'/>sellPrice: ₹{props.sellPrice}/-</h3>
+        <h3 className=' font-sans flex flex-row justify-center' ><RiNumbersFill className='mx-2 mt-1.5 text-dark_heading'/>{props.leftInStock} Items Left</h3>
     </div>
     </div>
     <div className='flex flex-row justify-between mt-4'>
