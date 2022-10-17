@@ -1,6 +1,6 @@
-import crypto from 'crypto';
-import jwt from 'jsonwebtoken';
-import User from '../models/user';
+const crypto =  require('crypto');
+const jwt =  require('jsonwebtoken');
+const User =  require('../api/models/user');
 
 module.exports = {
     sha256: (data, salt) => crypto.createHash('sha256').update(data+salt).digest('hex'),

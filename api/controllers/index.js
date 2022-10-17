@@ -1,0 +1,7 @@
+module.exports.loginController = require('./login')
+module.exports.registerController = require('./register')
+module.exports.userinfoController = require('./userinfo')
+module.exports.itemController = require('./item')
+module.exports.employeeController = require('./employee')
+module.exports.shopController = require('./shop')
+module.exports.logController = require('./log')

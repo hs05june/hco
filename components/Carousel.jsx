@@ -15,14 +15,15 @@ const Carousel = () => {
         pauseOnHover: true,
         pauseOnFocus: true,
         resetProgress: true,
+        width: '100%',
     }}
     >
         <SplideTrack>
   <SplideSlide className="flex justify-center">
-   <Image src="/1.jpg" alt="Image 1"  height="400" width="800"/>  
+   <Image src="/1.jpg" alt="Image 1"  height="600" width="1200"/>  
   </SplideSlide>
   <SplideSlide className="flex justify-center">
-  <Image src="/2.jpg" alt="Image 2" height="400" width="800"/>
+  <Image src="/2.jpg" alt="Image 2" height="600" width="1200"/>
 
   </SplideSlide>
   </SplideTrack>
