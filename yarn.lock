@@ -1475,11 +1475,6 @@
   dependencies:
     "call-bind" "^1.0.2"
 
-"is@^3.2.1":
-  "integrity" "sha512-nW24QBoPcFGGHJGUwnfpI7Yc5CdqWNdsyHQszVE/z2pKHXzh7FZ5GWhJqSyaQ9wMkQnsTx+kAI8bHlCX4tKdbg=="
-  "resolved" "https://registry.npmjs.org/is/-/is-3.3.0.tgz"
-  "version" "3.3.0"
-
 "isexe@^2.0.0":
   "integrity" "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="
   "resolved" "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz"

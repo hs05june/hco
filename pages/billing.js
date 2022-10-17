@@ -2,10 +2,15 @@ import React from 'react';
 import {TiSortAlphabeticallyOutline} from 'react-icons/ti';
 import{RiNumbersFill} from 'react-icons/ri'
 import{AiTwotoneDelete} from 'react-icons/ai'
+import Head from 'next/head'
 
 const billing = () => {
   return (
     <>
+     <Head>
+      <title>AMBITION-BILLING</title>
+      <link rel="icon" href="/icon.jpg" />
+    </Head>
     <div className='text-[35px] text-dark_heading mt-[10px] pl-[1vw] border-b-[3px] border-black sticky top-[0px] bg-white'>BILLING</div>
     <hr/>
     <div className='mx-3 my-3 flex flex-col md:flex-row'>

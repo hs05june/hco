@@ -4,6 +4,7 @@ import { GrDiamond, GrFormAdd } from 'react-icons/gr';
 import UpdateItem from './UpdateItem';
 import StockCard from './StockCard';
 import AddItem from './AddItem';
+import Head from 'next/head'
 
 const items = () => {
     const [allItems,changeAllItems] = useState([]);
@@ -16,6 +17,10 @@ const items = () => {
 
   return (
     <div>
+      <Head>
+      <title>AMBITION-ITEMS</title>
+      <link rel="icon" href="/icon.jpg" />
+      </Head>
             {showAdd && <AddItem close = {toggleShow}/>}
             {updateForm && <UpdateItem props={updateProps} close={toggleUpdateForm}/>}
        <div className={(showAdd || updateForm) ? 'blur select-none pointer-events-none' : ''}>     

@@ -3,7 +3,7 @@ import Graph_card from '../components/graph_card'
 import Chart from 'chart.js/auto';
 import { Bar } from 'react-chartjs-2';
 import { useState } from 'react';
-
+import Head from 'next/head'
 
 
 
@@ -75,6 +75,10 @@ export default function Home() {
 
   return (
     <>
+    <Head>
+      <title>AMBITION-DASHBOARD</title>
+      <link rel="icon" href="/icon.jpg" />
+    </Head>
       <div className='text-[35px] text-dark_heading mt-[10px] pl-[1vw] border-b-[3px] border-black sticky top-[0px] bg-white'>Dashboard</div>
       <div className='flex flex-wrap justify-center mt-[20px]'>
         <Graph_card bg_color="dark-background" icon={faSquarePlus} text="Total Income" amount="567" />
