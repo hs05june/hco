@@ -8,7 +8,7 @@ const billing = () => {
   return (
     <>
      <Head>
-      <title>AMBITION-BILLING</title>
+      <title>BILLING FOR NO FUCKING REASON</title>
       <link rel="icon" href="/icon.jpg" />
     </Head>
     <div className='text-[35px] text-dark_heading mt-[10px] pl-[1vw] border-b-[3px] border-black sticky top-[0px] bg-white'>BILLING</div>
@@ -22,6 +22,13 @@ const billing = () => {
             </div>
             <ul className='h-[30vh] md:h-[65vh] text-center rounded-b-md shadow-lg overflow-y-scroll w-72 billingItems m-auto'>
                 <li className='bg-light_background py-1 mb-0.5 px-2 hover:cursor-pointer truncate'>Itezzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzms</li>
+                <li className='bg-light_background py-1 mb-0.5 px-2 hover:cursor-pointer truncate'>Itezzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzms</li>
+                <li className='bg-light_background py-1 mb-0.5 px-2 hover:cursor-pointer'>Items</li>
+                <li className='bg-light_background py-1 mb-0.5 px-2 hover:cursor-pointer'>Items</li>
+                <li className='bg-light_background py-1 mb-0.5 px-2 hover:cursor-pointer'>Items</li>
+                <li className='bg-light_background py-1 mb-0.5 px-2 hover:cursor-pointer'>Items</li>
+                <li className='bg-light_background py-1 mb-0.5 px-2 hover:cursor-pointer'>Items</li>
+                <li className='bg-light_background py-1 mb-0.5 px-2 hover:cursor-pointer'>Items</li>
                 <li className='bg-light_background py-1 mb-0.5 px-2 hover:cursor-pointer'>Items</li>
                 <li className='bg-light_background py-1 mb-0.5 px-2 hover:cursor-pointer'>Items</li>
                 <li className='bg-light_background py-1 mb-0.5 px-2 hover:cursor-pointer'>Items</li>
@@ -56,6 +63,7 @@ const billing = () => {
                     <th className='w-40 text-center px-2 py-1'>GST</th>
                     <th className='w-40 text-center px-2 py-1'>AMOUNT</th>
                     <th className='w-40 text-center px-2 py-1'>REMOVE</th>
+                    <th className='w-40 text-center px-2 py-1'>ADD</th>
                 </tr>
                 <tr className='text-moderate_color border-b-[1px] border-black'>
                     <th className='w-80 text-left px-2 py-1'>Chawal</th>
