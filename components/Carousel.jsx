@@ -1,6 +1,9 @@
 import {Splide,SplideSlide,SplideTrack} from "@splidejs/react-splide"
 import Image from "next/image"
 import '@splidejs/react-splide/css';
+
+
+//writing carousel in splidejs
 const Carousel = () => {
   return (
     <Splide hasTrack={false} aria-label="My Favorite Images"
