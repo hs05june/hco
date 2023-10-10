@@ -4,6 +4,9 @@ import {ImPriceTags} from 'react-icons/im';
 import {AiTwotoneDelete,AiFillEdit} from 'react-icons/ai';
 import Image from 'next/image';
 
+
+// material ui
+
 const StockCard = (props) => {
     var back;
     if(props.category=='sufficient'){
