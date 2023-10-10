@@ -8,6 +8,10 @@ import Head from 'next/head'
 
 
 
+
+
+
+// writing function for the home
 export default function Home() {
   
   let m=new Map([
