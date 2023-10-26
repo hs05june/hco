@@ -17,7 +17,7 @@ module.exports = {
 			if (hash !== user.passwordHash) return res.json({ status: 'password incorrect' })
 
 			const token = jwt.sign({ userId: user._id }, process.env.SECRET_KEY)
-
+			res.redirect("/home")
 			return res.json({
 				status: 'OK',
 				jwt: token,

@@ -1,7 +1,32 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
+import axios from '../axios/axios.js';
+
+const initialState = {
+    username: '',
+    email: '',
+    phoneNumber: '',
+    password: '',
+}
 
 const signup = () => {
+    const [form, setForm] = useState(initialState);
+
+    const handleChange = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const { username, email, password, phoneNumber } = form;
+
+        axios.post("/register", {
+            name:username, email, password, phoneNumber
+        });
+
+    }
+        
   return (
     <div className='h-screen login'>
     <div className='absolute top-1/3 text-center xl:w-2/3 lg:w-3/5 md:w-1/2 md_max:w-1/2 sm_max:hidden'>
@@ -16,11 +41,11 @@ const signup = () => {
                 <span className="text-dark_heading xl:text-6xl md:text-5xl sm:text-5xl sm_max:text-4xl">W</span>elcome <span className='text-dark_heading xl:text-6xl md:text-5xl sm:text-5xl sm_max:text-4xl'>B</span>ack
             </div>
             <div className='flex flex-col items-center w-full my-5'>
-                <input type="text" placeholder='Enter Your Username' className='w-full px-5 py-3 my-2 outline-none rounded-xl'/>
-                <input type="text" placeholder='Enter Your Email' className='w-full px-5 py-3 my-2 outline-none rounded-xl'/>
-                <input type="number" placeholder='Enter Your Phone Number' className='w-full px-5 py-3 my-2 outline-none rounded-xl'/>
-                <input type="password" placeholder='Enter Your Password' className='w-full px-5 py-3 my-2 outline-none rounded-xl' />
-                <button className=' bg-button_color py-4 tracking-wide text-bold rounded-lg text-white w-full my-2 hover:opacity-90'>Signup</button>
+                <input type="text" name='username' placeholder='Enter Your Username' onChange={handleChange} className='w-full px-5 py-3 my-2 outline-none rounded-xl'/>
+                <input type="text" name='email' placeholder='Enter Your Email' onChange={handleChange} className='w-full px-5 py-3 my-2 outline-none rounded-xl'/>
+                <input type="number" name='phoneNumber' placeholder='Enter Your Phone Number' onChange={handleChange} className='w-full px-5 py-3 my-2 outline-none rounded-xl'/>
+                <input type="password" name='password' placeholder='Enter Your Password' onChange={handleChange} className='w-full px-5 py-3 my-2 outline-none rounded-xl' />
+                <button className=' bg-button_color py-4 tracking-wide text-bold rounded-lg text-white w-full my-2 hover:opacity-90' onClick={handleSubmit}>Signup</button>
                 <span className='login_link text-lg my-2'>Already a User? <Link href="login"> Login</Link></span>
             </div>
 
