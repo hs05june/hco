@@ -17,13 +17,9 @@ module.exports = {
 			const passwordHash = utils.sha256(password, salt)
 			const user = await User.create({ name: name, email: email, salt: salt, passwordHash: passwordHash })
 			const token = jwt.sign({ userId: user._id }, process.env.SECRET_KEY)
-			res.setHeader('Set-Cookie', cookie.serialize('token', token, {
-				httpOnly: true, 
-				secure: process.env.NODE_ENV === 'production' ? true : false, 
-				sameSite: 'Strict', 
-			  }));
-			res.json({
+			return res.json({
 				status: 'OK',
+				jwt: token,
 				data: {
 					_id: user._id.toString(),
 					name: user.name,
@@ -31,7 +27,6 @@ module.exports = {
 					shops: [],
 				},
 			})
-			res.redirect("/home")
 		
 		} catch ({ message }) {
 			res.status(400).json({ status: message })

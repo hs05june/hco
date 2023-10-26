@@ -1,5 +1,4 @@
 const { Schema, model, models } = require("mongoose");
-const uniqueValidator = require("mongoose-unique-validator");
 
 const userSchema = new Schema({
   email: {
@@ -29,7 +28,5 @@ const userSchema = new Schema({
     default: []
   }
 });
-
-userSchema.plugin(uniqueValidator);
 
 module.exports = models?.User || model("User", userSchema);

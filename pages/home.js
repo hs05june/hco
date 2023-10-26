@@ -1,12 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Graph_card from '../components/graph_card'
 import { faWallet,faSquareMinus,faSquarePlus} from '@fortawesome/free-solid-svg-icons'
 import StockCard from './StockCard'
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/router.js';
 
 const Home = () => {
 
+  const router = useRouter()
     const [updateProps,changeUpdateProps] = useState({});
     const [updateForm,toggleUpdateForm] = useState(false);
+    const cookie = Cookies.get("jwt")
+
+    useEffect(()=>{
+      if(!cookie){
+       router.push("/login")
+      }
+    },[cookie])
 
   return (
     <div className="main-page">

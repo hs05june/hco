@@ -1,6 +1,8 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from '../axios/axios.js';
+import { useRouter } from 'next/router.js';
+import Cookies from 'js-cookie';
 
 const initialState = {
     username: '',
@@ -10,7 +12,16 @@ const initialState = {
 }
 
 const signup = () => {
+
+    const cookie = Cookies.get("jwt")
+
+    useEffect(()=>{
+
+        cookie && router.push("/home")
+    },[cookie])
+
     const [form, setForm] = useState(initialState);
+    const router = useRouter()
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -23,7 +34,13 @@ const signup = () => {
 
         axios.post("/register", {
             name:username, email, password, phoneNumber
-        });
+        }).then((e)=>{
+            Cookies.set("jwt", e.data.jwt)
+            console.log(e)
+            if(e.status===200){
+                router.push("/home")
+            }
+        }).catch(err=>console.log(err));
 
     }
         
