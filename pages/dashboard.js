@@ -5,12 +5,6 @@ import { Bar } from 'react-chartjs-2';
 import { useState } from 'react';
 import Head from 'next/head'
 
-
-
-
-
-
-
 // writing function for the home
 export default function Home() {
   

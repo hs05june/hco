@@ -4,6 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const validate = require('./api/middleware');
 const routes = require('./api/routes');
+// require("dotenv").config
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
