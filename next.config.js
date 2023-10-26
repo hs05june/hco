@@ -4,7 +4,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const validate = require('./api/middleware');
 const routes = require('./api/routes');
-// require("dotenv").config
+const cookieParser = require("cookie-parser");
+require("dotenv").config("./.env")
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -17,6 +18,7 @@ module.exports = () => {
 	app.use(json());
 	app.use(urlencoded({ extended: true }));
 	app.use(cors());
+	app.use(cookieParser());
 	app.disable("x-powered-by");
 	app.use('/api', validate, routes);
 	app.listen(8080, () => {

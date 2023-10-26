@@ -24,8 +24,8 @@ const Navbar = () => {
                 </div>
         </div>
         <div className="navbtns md:w-1/4 lg:w-1/6  md_max:hidden flex flex-column justify-between w-1/8">
-            <button><Link href="signup">Sign Up</Link></button>
-            <button><Link href="login">Log In</Link></button>
+            <button><Link href="/signup">Sign Up</Link></button>
+            <button><Link href="/login">Log In</Link></button>
         </div>
         <div className="hidden md_max:block">
             <AiOutlineMenu fontSize="2rem" onClick={()=>{setActive(!active)}}/>
