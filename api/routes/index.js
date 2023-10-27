@@ -1,10 +1,11 @@
 const { Router } = require("express");
 const Controller = require("../controllers");
+const AuthenticatedUser = require("../middleware/index")
 
 const router = Router();
 router.post("/login", Controller.loginController.login);
+router.get("/userinfo", AuthenticatedUser, Controller.userinfoController.get)
 router.post("/register", Controller.registerController.register);
-router.get("/userinfo", Controller.userinfoController.get);
 router.get("/item", Controller.itemController.get);
 router.post("/item", Controller.itemController.post);
 router.put("/item", Controller.itemController.put);

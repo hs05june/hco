@@ -14,14 +14,16 @@ const initialState = {
 const signup = () => {
 
     const cookie = Cookies.get("jwt")
+    const router = useRouter()
 
     useEffect(()=>{
 
-        cookie && router.push("/home")
+        axios.get("/userinfo",{headers:{authorization:`Bearer ${cookie}`}}).then((e)=>{
+            e.status===200 && router.push("/home")
+        }).catch((err)=>console.log(err))
     },[cookie])
 
     const [form, setForm] = useState(initialState);
-    const router = useRouter()
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
