@@ -223,3 +223,11 @@ footer {
   text-align: center;
   padding: 0.5rem;
 }
+
+.background-white{
+  background-color: white !important;
+}
+
+.textColor-black{
+  color: black !important;
+}

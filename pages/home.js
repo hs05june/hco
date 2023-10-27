@@ -4,18 +4,20 @@ import { faWallet,faSquareMinus,faSquarePlus} from '@fortawesome/free-solid-svg-
 import StockCard from './StockCard'
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router.js';
+import axios from "../axios/axios"
 
 const Home = () => {
 
-  const router = useRouter()
     const [updateProps,changeUpdateProps] = useState({});
     const [updateForm,toggleUpdateForm] = useState(false);
     const cookie = Cookies.get("jwt")
+    const router = useRouter()
 
     useEffect(()=>{
-      if(!cookie){
-       router.push("/login")
-      }
+
+        axios.get("/userinfo",{headers:{authorization:`Bearer ${cookie}`}}).then((e)=>{
+            e.status!==200 && router.push("/login")
+        }).catch((err)=>console.log(err))
     },[cookie])
 
   return (
@@ -25,7 +27,7 @@ const Home = () => {
         <nav>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/products">Products</a></li>
+            <li><a href="/draw">Draw</a></li>
             <li><a href="/cart">Cart</a></li>
             <li><a href="/checkout">Checkout</a></li>
           </ul>

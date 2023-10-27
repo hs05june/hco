@@ -7,6 +7,7 @@ const Log = require('../models/log');
 
 module.exports = async (req, res, next) => {
     const url = req.url;
+
     if (['/login', '/register'].includes(url))
         return next();
         
