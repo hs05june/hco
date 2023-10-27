@@ -1,5 +1,8 @@
+import { useRouter } from "next/router";
 import React, { useEffect, useRef } from "react";
 import { io } from "socket.io-client";
+import Cookies from 'js-cookie';
+import axios from "../axios/axios"
 
 const Draw = () => {
   const canvasRef = useRef();
@@ -8,6 +11,16 @@ const Draw = () => {
   const socket = io("http://localhost:8080", {
     withCredentials: true,
   });
+
+  const cookie = Cookies.get("jwt")
+  const router = useRouter()
+
+  useEffect(()=>{
+
+      axios.get("/userinfo",{headers:{authorization:`Bearer ${cookie}`}}).then((e)=>{
+          e.status!==200 && router.push("/login")
+      }).catch((err)=>console.log(err))
+  },[cookie])
 
   useEffect(() => {
     ctx.current = canvasRef.current.getContext("2d");
@@ -93,7 +106,7 @@ const Draw = () => {
     <div className="w-screen h-screen items-center flex flex-col">
       <div className="navbtns h-auto my-auto items-center flex flex-col">
         <p className="textColor-white mb-6 text-[3vw]">
-          Share the url above to connect with different people and draw!
+          Draw in group and enjoy!
         </p>
         <canvas
           width={500}
